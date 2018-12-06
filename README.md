@@ -3,13 +3,11 @@
 ## Getting Started
 
 1. Clone the repo to your local machine  
-`git clone git@github.com:baileyholl/SBIR-Project.git`
+`git clone https://github.com/chris-tse/sbir-public`
 
-2. Navigate into `GrantWebsite/node_server`  
-`cd GrantWebsite/node_server`
 
 3. Install dependencies  
-`npm i`
+`npm install`
 
 4. Run the development server  
 `npm start`

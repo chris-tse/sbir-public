@@ -6,7 +6,7 @@
     "start": "pm2 start app.js --name sbirApp",
     "babel": "babel public/js/src -d public/js/build",
     "poststart": "pm2 logs",
-    "dev": "MONGO_URI=mongodb://sbirdev:sbirdev1@ds125021.mlab.com:25021/sbir-dev NODE_ENV=dev pm2 start app.js --name sbirApp --watch --update-env",
+    "dev": "MONGO_URI=mongoURI NODE_ENV=dev pm2 start app.js --name sbirApp --watch --update-env",
     "clean": "rm -rf node_modules && npm i",
     "deploy:staging": "eb use sbir-staging && eb deploy",
     "deploy:production": "eb use sbir-production && eb deploy",
