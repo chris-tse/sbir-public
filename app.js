@@ -55,15 +55,10 @@ if (cluster.isMaster) {
         cluster.fork();
     });
     
-    // module.exports.config = AWS.config;
-    exports.dynamodb = dynamoDb;
-    dynamo.createTopicTable();
-    dynamo.createUserTable();
     module.exports = app;
-    // topics.setupKeyInterval();
 // Code to run if we're in a worker process
 } else {
-    console.log('🚀 NODE_ENV is set to:', process.env.NODE_ENV);
+    console.log('NODE_ENV is set to:', process.env.NODE_ENV);
     
     const mongoURI = process.env['MONGO_URI'];
     console.log(mongoURI);
