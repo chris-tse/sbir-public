@@ -1,0 +1,23 @@
+<h3>Affiliation</h3>
+<p>
+    Affiliation: {{affiliation}} <br>
+    Location: {{#if city}}{{city}}, {{/if}}{{#if state}}{{state}}{{/if}}
+</p>
+<hr>
+<h3>Contact</h3>
+<p>
+    {{#if link}}
+        Website:
+        <a href="{{link}}">{{normalize link}}</a><br>
+    {{/if}}
+    {{#if email}}
+        Email:
+        <a href="mailto:{{email}}">{{email}}</a><br>
+    {{/if}}
+    {{#if phone}}
+        Phone:
+        <a href="tel:{{phone}}">{{phone}}</a>
+    {{/if}}
+</p>
+<h3>About</h3>
+<p>{{profile}}</p>

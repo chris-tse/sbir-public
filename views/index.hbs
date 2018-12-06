@@ -1,0 +1,377 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/lib/aos/aos.css">
+    <script src="/lib/aos/aos.js"></script>
+{{/section}}
+
+<section id="intro">
+    {{# if logout}}
+        <div class="alert-fixed alert alert-info alert-dismissible fade show" role="alert">
+            You have successfully logged out
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <script>
+            setTimeout(function() {
+                $('.alert-fixed').fadeOut(300)
+            }, 4000);
+        </script>
+    {{/if}}
+    <div class="intro-text">
+        <h2>Welcome to the SBIR Connector</h2>
+        <p>Find partners to pursue an SBIR/STTR award</p>
+        <a href="/register" class="btn-get-started scrollto">Get Started</a>
+    </div>
+
+    <!--<div class="product-screens">-->
+
+    <!--<div class="product-screen-1" data-aos="fade-up" data-aos-delay="400">-->
+    <!--<img src="img/product-screen-1.png" alt="">-->
+    <!--</div>-->
+
+    <!--<div class="product-screen-2" data-aos="fade-up" data-aos-delay="200">-->
+    <!--<img src="img/product-screen-2.png" alt="">-->
+    <!--</div>-->
+
+    <!--<div class="product-screen-3" data-aos="fade-up">-->
+    <!--<img src="img/product-screen-3.png" alt="">-->
+    <!--</div>-->
+
+    <!--</div>-->
+
+</section>
+<!-- #intro -->
+
+<main id="main">
+
+<!--==========================
+About Us Section
+============================-->
+    <section id="about">
+        <div class="container-fluid">
+            <div class="section-header container" data-aos="fade-up">
+                <h3 class="section-title">About the SBIR Connector</h3>
+                <span class="section-divider"></span>
+                <p class="section-description">
+                    The SBIR Connector is a social database that gives you the ability to connect with other entrepreneurs, researchers, and small businesses interested in SBIR/STTR opportunities.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 content" data-aos="fade-up">
+                    <h2 class="text-center">Find the topics that matter.</h2>
+                    <p>
+                        Whether you are looking for the latest SBIR topics and solicitations or are in need of a business partner with a special set of skills, the SBIR Connector can help you find opportunities tailored to your needs. 
+                    </p>
+                    <ul>
+                        <li><strong>Step 1. Find a funding opportunity that is right for you</strong>
+                            <br>
+                            Search through the database of SBIR/STTR funding opportunities to find the right SBIR/STTR topic.
+                        </li>
+                        <li><strong>Step 2. Indicate interest in a funding opportunity</strong>
+                            <br>
+                            Once you find a topic you are interested in, use the “List Me” button to the right of the topic list to indicate your interest. By clicking this button, your profile information will be listed next to the topic so that other users can contact you about collaborating on a topic.
+                        </li>
+                        <li><strong>Step 3. Receive notifications when others indicate interest in the same funding opportunity</strong>
+                            <br>
+                            When other users indicate interest in a topic on the SBIR Connector platform, all other interested users will be notified.</li>
+                        <li><strong>Step 4. Reach out to potential partners</strong>
+                            <br>
+                            The SBIR Connector platform gives interested users the opportunity to build a team that is well-positioned to submit an SBIR/STTR proposal to that topic.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- #about -->
+
+    <!--==========================
+Product Features Section
+============================-->
+    <section id="features" class="section-bg">
+        <div class="container section-bg">
+
+            <div class="row">
+
+                <div class="col-lg-12">
+                    <div class="section-header" data-aos="fade" data-aos-duration="1000">
+                        <h3 class="section-title">Platform Features</h3>
+                        <span class="section-divider"></span>
+                    </div>
+                </div>
+                <div class="col-lg-8 offset-lg-2 ">
+
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6 box" data-aos="fade-left">
+                            <div class="icon">
+                                <i class="ion-filing"></i>
+                            </div>
+                            <h4 class="title">
+                                Centralized Topics
+                            </h4>
+                            <p class="description">Open topics and solicitations from every agency are stored and referenced here so that you can find the funding opportunities most relevant to you.</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 box" data-aos="fade-left" data-aos-delay="100">
+                            <div class="icon">
+                                <i class="ion-person-stalker"></i>
+                            </div>
+                            <h4 class="title">
+                                Topic and Partner Matching
+                            </h4>
+                            <p class="description">Customize your profile to connect with users and topics that are suited to your specific skill set.</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 box" data-aos="fade-left" data-aos-delay="200">
+                            <div class="icon">
+                                <i class="ion-search"></i>
+                            </div>
+                            <h4 class="title">
+                                Topic Searching and Filtering
+                            </h4>
+                            <p class="description">Search across all listings to find the topics and solicitations that are most relevant to you.</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 box" data-aos="fade-left" data-aos-delay="300">
+                            <div class="icon">
+                                <i class="ion-email-unread"></i>
+                            </div>
+                            <h4 class="title">
+                                Automated Reminders
+                            </h4>
+                            <p class="description">Receive notifications when you match with a topic or partner, or when new solicitations and topics are released.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!--==========================
+Frequently Asked Questions Section
+============================-->
+    <section id="faq">
+        <div class="container">
+
+            <div class="section-header">
+                <h3 class="section-title">Frequently Asked Questions</h3>
+                <span class="section-divider"></span>
+                <p class="section-description">Have other questions? Send us a message below!</p>
+            </div>
+
+            <ul id="faq-list" data-aos="fade-up">
+                <li>
+                    <a data-toggle="collapse" class="collapsed faq-item" data-target="#faq1">What is SBIR/STTR?
+                        <i class="ion-android-remove"></i>
+                    </a>
+                    <div id="faq1" class="collapse" data-parent="#faq-list">
+                        <p>
+                            The Small Business Innovation Research (SBIR) and Small Business Technology Transfer (STTR) programs are run by the U.S. Small Business Administration and are funded through various federal agencies. The programs fund proposals through a competitive award process. Funding is awarded to small businesses for the purpose of developing high-tech, innovative products with a strong commercialization potential.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" data-target="#faq2" class="collapsed faq-item">How does the SBIR Connector help increase my odds of obtaining SBIR funding?
+                        <i class="ion-android-remove"></i>
+                    </a>
+                    <div id="faq2" class="collapse" data-parent="#faq-list">
+                        <p>
+                            A small business with a great idea may not have the necessary resources to be competitive for an SBIR award. The SBIR Connector provides a platform for small businesses to partner with qualified individuals, other businesses, or research institutions to aid in product design, development, testing, etc. Working with skilled and qualified partners can increase the likelihood of receiving SBIR funding.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" data-target="#faq3" class="collapsed faq-item">How does the SBIR Connector work?
+                        <i class="ion-android-remove"></i>
+                    </a>
+                    <div id="faq3" class="collapse" data-parent="#faq-list">
+                        <p>
+                            New topics and solicitations are uploaded and updated as they become available from federal agencies. These will be listed under "Topics" with all supporting information. SBIR Connector users are able to create a profile on the site which allows them to indicate interest on any topic. Interested parties can then connect with one another to discuss partnership on a topic.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" data-target="#faq4" class="collapsed faq-item">How often are new topics and solicitations added?
+                        <i class="ion-android-remove"></i>
+                    </a>
+                    <div id="faq4" class="collapse" data-parent="#faq-list">
+                        <p>
+                            The website is updated within 3 days of each topic release from individual agencies.
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" data-target="#faq5" class="collapsed faq-item">Where can I learn more about the SBIR/STTR programs?
+                        <i class="ion-android-remove"></i>
+                    </a>
+                    <div id="faq5" class="collapse" data-parent="#faq-list">
+                        <p>
+                            General information about the program can be found at <a href="https://sbir.gov">sbir.gov</a>.
+                        </p>
+                        <p>
+                            Each federal agency has detailed information about their SBIR/STTR program on their individual websites:
+                            <ul>
+                                <li class="agency-item"><a href="https://www.acq.osd.mil/osbp/sbir/">Department of Defense (DOD)</a></li>
+                                <li class="agency-item"><a href="https://sbir.nih.gov/">Health and Human Services/National Institutes of Health (HHS/NIH)</a></li>
+                                <li class="agency-item"><a href="https://nifa.usda.gov/program/small-business-innovation-research-program-sbir">Department of Agriculture (DOA)</a></li>
+                                <li class="agency-item"><a href="https://www.nist.gov/tpo/small-business-innovation-research-program">National Institute of Standards and Technology (NIST)</a></li>
+                                <li class="agency-item"><a href="https://techpartnerships.noaa.gov/SBIR">National Oceanic and Atmospheric Administration (NOAA)</a></li>
+                                <li class="agency-item"><a href="https://www2.ed.gov/programs/sbir/index.html">Department of Education (ED)</a></li>
+                                <li class="agency-item"><a href="https://science.energy.gov/sbir/">Department of Energy (DOE)</a></li>
+                                <li class="agency-item"><a href="https://sbir2.st.dhs.gov/portal/SBIR/">Department of Homeland Security (DHS)</a></li>
+                                <li class="agency-item"><a href="https://www.volpe.dot.gov/work-with-us/small-business-innovation-research">Department of Transportation (DOT)</a></li>
+                                <li class="agency-item"><a href="https://www.epa.gov/sbir">Environmental Protection Agency (EPA)</a></li>
+                                <li class="agency-item"><a href="https://sbir.nasa.gov/">National Aeronautics and Space Administration (NASA)</a></li>
+                                <li class="agency-item"><a href="https://seedfund.nsf.gov/">National Science Foundation (NSF)</a></li>
+                            </ul>
+                        </p>
+                    </div>
+                </li>
+
+                <li>
+                    <a data-toggle="collapse" data-target="#faq6" class="collapsed faq-item">Where can I get help with my SBIR/STTR proposal?    
+                        <i class="ion-android-remove"></i>
+                    </a>
+                    <div id="faq6" class="collapse" data-parent="#faq-list">
+                        <p>
+                            If you are located in Oklahoma, visit <a href="https://www.okcatalyst.com/">OKCatalyst.com</a> to get information about the Oklahoma Catalyst Programs. We offer a number of programs to assist small businesses with SBIR/STTR funding. If you are based somewhere outside of Oklahoma, visit <a href="https://sbir.gov">sbir.gov</a> and click "Local Resources" to search for help in your state
+                        </p>
+                        
+                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEafiTRqNCN0MsY-PEl67GLo64vHqZ5XVcGO0KePdlJspUzA/viewform?embedded=true" width="640" height="1639" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe> 
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </section>
+    <!-- #faq -->
+
+    <!--==========================
+About Catalyst Programs Section
+============================-->
+    <section id="catalyst" class="section-bg">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-title">About Catalyst Programs</h3>
+                <span class="section-divider"></span>
+            </div>
+            <div class="row" data-aos="fade-up">
+                <div class="col">
+                    <p>The Oklahoma Catalyst Programs provide networking, training, and mentoring to entrepreneurs and small business owners in Oklahoma. We are located in Norman, Oklahoma at the Tom Love Innovation Hub on the University of Oklahoma Research Campus, but we work with entrepreneurs and small business owners throughout Oklahoma. We believe that small businesses launching hi-tech companies are our best bet for solving many of the challenges facing Oklahoma and the nation. One of the best tools to help U.S. small businesses fund their research and development is the Small Business Administration's (SBA) Small Business Innovation and Research (SBIR) program: a $2.5 billion funding opportunity for small businesses to do technology-focused research and development.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- #team -->
+
+
+    <!--==========================
+Contact Section
+============================-->
+    <section id="contact">
+        <div class="container">
+            <div class="row" data-aos="fade-up">
+
+                <div class="col-lg-4 col-md-4">
+                    <div class="contact-about">
+                        <h2 class="blue"><img src="img/sbirlogoblue.png" alt="SBIR Connector Logo" style="width: 100%"></h2>
+                        <p>Have a question about the platform or want to request a feature? Send us a message!</p>
+                        <div class="social-links">
+                            <a href="https://twitter.com/okcatalyst" class="twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="https://www.facebook.com/OUinnovationhub/" class="facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/okcatalyst/" class="instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-4">
+                    <div class="info">
+                        <div>
+                            <i class="ion-ios-location-outline"></i>
+                            <p>Three Partners Place
+                                <br>201 David L Boren Blvd
+                                <br>Norman, OK 73072</p>
+                        </div>
+
+                        <div>
+                            <i class="ion-ios-email-outline"></i>
+                            <p><a href="mailto:sbir@ou.edu">sbir@ou.edu</a></p>
+                        </div>
+
+                        <div>
+                            <i class="ion-ios-telephone-outline"></i>
+                            <p>(405) 325-7804</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-5 col-md-8">
+                    <div class="form">
+                        <div class="sendmessage d-none">Your message has been sent. Thank you!</div>
+                        <div class="errormessage d-none">Error sending message. Please try again later or email us directly at okcatalysts@gmail.com</div>
+                        <div role="form" class="contactForm">
+                            <div class="form-row">
+                                <div class="form-group col-lg-6">
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:1" data-msg="*Required"
+                                    />
+                                    <div class="validation"></div>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email"
+                                    />
+                                    <div class="validation"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="*Required"
+                                />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="*Required" placeholder="Message" id="message"></textarea>
+                                <div class="validation"></div>
+                            </div>
+                            <div class="text-center">
+                                <input type="button" class="btn btn-primary" id="formSubmit" value="Send Message">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+</main>
+
+
+
+<a href="#" class="back-to-top">
+    <i class="fa fa-chevron-up"></i>
+</a>
+
+<!-- Template Main Javascript File -->
+{{#section 'scripts'}}
+    <script src="/js/main.js"></script>
+    <script src="/lib/easing/easing.min.js"></script>
+    <script src="/lib/aos/aos.js"></script>
+    <script src="/js/build/runtime.js"></script>
+    <script src="/js/build/submitContact.js"></script>
+{{/section}}

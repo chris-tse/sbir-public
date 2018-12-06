@@ -1,0 +1,21 @@
+#faq-list > li > a {
+    cursor: pointer;
+}
+
+.alert-fixed {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    width: 600px;
+    margin-left: -300px;
+}
+
+#faq #faq-list .faq-body-link {
+    display: inline;
+    font-size: inherit;
+}
+
+#faq #faq-list .agency-item {
+    border: none;
+    list-style-type: disc;
+}

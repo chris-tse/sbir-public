@@ -1,0 +1,52 @@
+{
+  "name": "SBIR-Connector",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "pm2 start app.js --name sbirApp",
+    "babel": "babel public/js/src -d public/js/build",
+    "poststart": "pm2 logs",
+    "dev": "MONGO_URI=mongodb://sbirdev:sbirdev1@ds125021.mlab.com:25021/sbir-dev NODE_ENV=dev pm2 start app.js --name sbirApp --watch --update-env",
+    "clean": "rm -rf node_modules && npm i",
+    "deploy:staging": "eb use sbir-staging && eb deploy",
+    "deploy:production": "eb use sbir-production && eb deploy",
+    "deploy": "npm run deploy:staging && npm run deploy:production"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.205.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "latest",
+    "connect-dynamodb": "^2.0.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "crypto-random-string": "^1.0.0",
+    "csurf": "^1.9.0",
+    "csv-parse": "2.5.0",
+    "debug": "~2.6.9",
+    "ejs": "latest",
+    "express": "latest",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.2.0",
+    "formidable": "^1.2.1",
+    "handlebars-dateformat": "^1.1.1",
+    "handlebars-paginate": "^0.1.0",
+    "helmet": "^3.12.1",
+    "mongoose": "^5.1.7",
+    "mongoose-paginate": "^5.0.3",
+    "nodemailer": "^4.6.8",
+    "normalize-url": "^3.2.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "pm2": "^3.1.2",
+    "regenerator": "^0.13.2",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.11.1",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1"
+  }
+}

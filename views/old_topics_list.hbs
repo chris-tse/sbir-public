@@ -1,0 +1,12 @@
+{{#each topic}}
+    <li>
+        <div class="topic-overview"><a href="/details?title={{title}}&agency={{agency}}">{{title}}</a>
+            <br><span class="badge badge-secondary">{{program}}</span> <span class="badge badge-secondary">{{agency}}</span>
+            <p>{{overview}}</p>
+            <span class="badge badge-pill badge-primary">Release Date: {{release_date}}</span>
+            <span class="badge badge-pill badge-success">Open Date: {{open_date}}</span>
+            <span class="badge badge-pill badge-danger">Close Date: {{close_date}}</span>
+        </div>
+        <hr>
+    </li>
+{{/each}}

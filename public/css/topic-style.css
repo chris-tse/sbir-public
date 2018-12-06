@@ -1,0 +1,96 @@
+.topics {
+    width: 100%;
+    background: #0072bb;
+    position: relative;
+    min-height: 95vh;
+}
+
+.topics h1 {
+    color: black;
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.topics .container {
+    padding-top: 100px;
+    background-color: #eff5f5;
+    min-height: 95vh;
+}
+
+.topics #block-title {
+    font-size: 25px;
+    margin: 0;
+    text-align: center;
+}
+
+hr {
+    margin: 8px;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+.topic-overview a{
+    font-size: 25px;
+    margin: 0;
+}
+
+p {
+    margin: 0 0 5px;
+}
+
+.badge-secondary {
+    font-size: 85%
+}
+
+
+.search-bar {
+    margin-top: 47px;
+    padding-right: 50px;
+}
+
+@media (max-width: 767px) {
+    .search-bar {
+        margin-top: 10px;
+        padding-right: 0;
+    }
+}
+
+.filtering h2 {
+    margin-bottom: 10px;
+}
+
+.agency-list,
+.program-list {
+    padding: 10px;
+}
+
+.agency,
+.program {
+    display: flex;
+    align-items: baseline;
+    font-size: 14px;
+}
+
+.agency.sub {
+    padding-left: 20px;
+}
+
+.agency-checkbox,
+.program-checkbox {
+    display: block;
+    margin-top: 10px;   
+}
+
+.agency-label,
+.program-label {
+    display: block;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.agency-checkbox:first-of-type,
+.agency-label:first-of-type,
+.program-checkbox:first-of-type,
+.program-label:first-of-type {
+    margin-top: 0;
+}

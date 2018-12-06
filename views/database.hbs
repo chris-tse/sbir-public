@@ -1,0 +1,46 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/css/login-style.css">
+    <link rel="stylesheet" href="/css/stickyfooter.css">
+    <link rel="stylesheet" href="/css/admin.css">
+{{/section}}
+<main class="card mx-auto">
+    <div class="container">
+        <form action="/admin/database" enctype="multipart/form-data" method="post">
+            <h5>Upload a CSV to the topics database</h5>
+            <!--<input type="file" name="upload" multiple="multiple">-->
+            <!--<label class="btn btn-secondary">-->
+            <!--Browse  <input type="file" name="upload" multiple="multiple">-->
+            <!--</label>-->
+            <!--<br>-->
+            <input type="file"
+                   style="visibility:hidden; width: 1px;"
+                   id='${multipartFilePath}' name='${multipartFilePath}'
+                   onchange="$(this).parent().find('span').html($(this).val().replace('C:\\fakepath\\', ''))"/>
+            <!-- Chrome security returns 'C:\fakepath\'  -->
+            <input class="btn btn-primary" type="button" name="upload" value="Select File.."
+                   onclick="$(this).parent().find('input[type=file]').click();"/>
+            <!-- on button click fire the file click event -->
+            <span class="badge badge-important"></span>
+            <br>
+            &nbsp;<button type="submit" value="Upload" class="btn btn-secondary" onclick="showLoad()">Upload</button>
+        </form>
+        <hr>
+        <div class="WaitingSubmission">
+            <div class="loader"></div>
+            <span>Waiting response from server...</span>
+        </div>
+        {{#if responseReturned}}
+            <div>
+                <h5>Results:</h5>
+                <p>Successfully uploaded {{successNum}} topics. Failed uploading {{failNum}} topics.</p>
+                <p>Logs: {{{logs}}}</p>
+            </div>
+        {{/if}}
+    </div>
+</main>
+<script type="text/javascript">
+    let showLoad = function () {
+        var x = document.getElementsByClassName("WaitingSubmission")[0];
+        x.style.display = "block";
+    }
+</script>

@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <link href="/css/topic_style.css" rel="stylesheet">
+    <!-- JavaScript Libraries -->
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/magnific-popup/magnific-popup.min.js"></script>
+
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/main.js"></script>
+    {{> head}}
+    <title>{{title}}</title>
+
+</head>
+
+<body>
+{{> nav}}
+<section class="topics">
+    <div class="container">
+        <h1 style="text-align: center">Open SBIR/STTR Topics</h1>
+        <hr>
+        <div class="row">
+            <aside class="col-md-3">
+                <h1 id="block-title">Filtering</h1>
+                <div class="list-group">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAgency" aria-expanded="false" aria-controls="collapseAgency">
+                        Agency</button>
+                    <div class="collapse" id="collapseAgency">
+                        <div class="card">
+                            <a href="/topics?agency=Department of Commerce" class="list-group-item list-group-item-action">Department of Commerce <span class="badge badge-primary badge-pill">0</span></a>
+                            <a href="/topics?agency=Department of Agriculture" class="list-group-item list-group-item-action">Department of Agriculture<span class="badge badge-primary badge-pill">0</span></a>
+                            <a href="/topics?agency=Department of Defense" class="list-group-item list-group-item-action">Department of Defense<span class="badge badge-primary badge-pill">0</span></a>
+                            <a href="/topics?agency=Department of Education" class="list-group-item list-group-item-action">Department of Education <span class="badge badge-primary badge-pill">0</span></a>
+                            <a href="/topics?agency=Department of Energy" class="list-group-item list-group-item-action">Department of Energy<span class="badge badge-primary badge-pill">0</span></a>
+                            <a href="/topics?agency=Department of Health and Human Services" class="list-group-item list-group-item-action">Department of Health and Human Services<span class="badge badge-primary badge-pill">105</span></a>
+                            <a href="/topics?agency=Department of Homeland Security" class="list-group-item list-group-item-action">Department of Homeland Security<span class="badge badge-primary badge-pill">0</span></a>
+                            <a href="/topics?agency=Department of the Interior" class="list-group-item list-group-item-action">Department of the Interior<span class="badge badge-primary badge-pill">0</span></a>
+                            <a href="/topics?agency=Department of Transportation" class="list-group-item list-group-item-action">Department of Transportation<span class="badge badge-primary badge-pill">0</span></a>
+                            <a href="/topics?agency=Department of Agriculture" class="list-group-item list-group-item-action">Department of Agriculture<span class="badge badge-primary badge-pill">0</span></a>
+                        </div>
+                    </div>
+                    <br/>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseYear" aria-expanded="false" aria-controls="collapseYear">
+                        Program Type</button>
+                    <div class="collapse" id="collapseYear">
+                        <div class="card">
+                            <a href="/topics?program=SBIR" class="list-group-item list-group-item-action">SBIR</a>
+                            <a href="/topics?program=STTR" class="list-group-item list-group-item-action">STTR</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Notice!</h4>
+                    <p>Topic information is updated nightly - make sure to check the original source for the most current information!</p>
+                    <hr>
+                    <p class="mb-0">More information can be found <a href="/#faq">here</a>.</p>
+                </div>
+            </aside>
+            <div class="col-md-9">
+                <ul class="list-unstyled">
+                    {{{body}}}
+                </ul>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination abs_center">
+
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#">6</a></li>
+                        <li class="page-item"><a class="page-link" href="#">...</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- #header -->
+{{> footer}}
+{{> libs}}
+<!-- #footer -->
+</body>
+
+</html>

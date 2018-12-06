@@ -1,0 +1,10 @@
+<h3>Listed Topics</h3>
+{{#if listedTopicsErr}}
+    <p>Error: Could not retrieve user's listed topics at this time.</p>
+{{else}}
+    <ul class="list-group">
+        {{#each listedTopics}}
+            <a href="/topics/{{this._id}}" class="list-group-item list-group-item-action">{{this.title}}</a>
+        {{/each}}
+    </ul>
+{{/if}}

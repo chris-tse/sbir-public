@@ -1,0 +1,10 @@
+<h3>Bookmarked Topics</h3>
+{{#if savedTopicsErr}}
+    <p>Error: Could not retrieve your bookmarked topics at this time.</p>
+{{else}}
+    <ul class="list-group">
+        {{#each savedTopics}}
+            <a href="/topics/{{this._id}}" class="list-group-item list-group-item-action">{{this.title}}</a>
+        {{/each}}
+    </ul>
+{{/if}}

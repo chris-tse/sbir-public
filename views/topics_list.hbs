@@ -1,0 +1,116 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/css/topic-style.css">
+    <script src="/lib/jquery/jquery.min.js"></script>
+{{/section}}
+<section class="topics">
+    <div class="container">
+        <h1 style="text-align: center">Open SBIR/STTR Topics</h1>
+        <hr>
+        <div class="row">
+            <aside class="col-md-3 filtering">
+                <h2 class="text-center">Filtering</h2>
+                <div class="list-group">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseYear" aria-expanded="false" aria-controls="collapseYear">
+                        Program Type</button>
+                    <div class="collapse" id="collapseYear">
+                        <div class="card">
+                            <fieldset class="program-list">
+                                <div class="program">
+                                    <input value="SBIR" class="program-checkbox" type="checkbox" name="program" id="SBIR">
+                                    <label class="program-label" for="SBIR">SBIR</label>
+                                </div>
+                                <div class="program">
+                                    <input value="STTR" class="program-checkbox" type="checkbox" name="program" id="STTR">
+                                    <label class="program-label" for="STTR">STTR</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAgency" aria-expanded="false" aria-controls="collapseAgency">
+                        Agency</button>
+                    <div class="collapse" id="collapseAgency">
+                        <div class="card">
+                            <fieldset class="agency-list">
+                            {{# each agencies}}
+                                <div class="agency top">
+                                    <input class="agency-checkbox" type="checkbox" name="agency" id="{{this.name}}" value="{{this.name}}">
+                                    <label class="agency-label" for="{{this.name}}">{{this.name}}</label>
+                                </div>
+                                {{#if this.subagencies.length}}
+                                    {{# each this.subagencies}}
+                                        <div class="agency sub">
+                                            <input class="agency-checkbox" data-parent="{{../this.name}}" type="checkbox" name="agency" id="{{this}}" value="{{this}}">
+                                            <label class="agency-label" for="{{this}}">{{this}}</label>
+                                        </div>
+                                    {{!-- <li><a href="/topics?agency={{this.name}}" class="list-group-item list-group-item-action">{{this.name}}</a></li> --}}
+                                    {{/each}}
+                                {{/if}}
+                            {{/each}}
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Notice!</h4>
+                    <p>Topic information is updated after topics are released - make sure to check the original source for the most current information!</p>
+                    <hr>
+                    <p class="mb-0">More information can be found <a href="/#faq">here</a>.</p>
+                </div>
+            </aside>
+            <div class="col-md-9">
+                <form>
+                    <div class="search-bar input-group mb-3">
+                        <input type="text" id="searchbar" class="form-control" value="{{search}}" name="keywords" placeholder="Search keywords" aria-label="Keyword search bar">
+                        <div class="input-group-append">
+                            <a class="btn btn-primary" href="javascript:void()" onclick="goToNewSearch()">Search</a>
+                        </div>
+                    </div>
+                </form>
+                {{# if search}}
+                    {{# if noResults}}
+                        <p>Sorry, no results were found for '{{keyword}}'</p>
+                    {{/if}}
+                {{/if}}
+                <ul class="list-unstyled">
+                    {{#each topics}}
+                        <li>
+                            <div class="topic-overview"><a href="/topics/{{_id}}">{{title}}</a>
+                                <br><span class="badge badge-secondary">{{program}}</span> <span class="badge badge-secondary">{{agency}}</span>
+                                <p>{{overview}}</p>
+                                <span class="badge badge-pill badge-primary">Release Date: {{dateFormat releaseDate "MMM-DD-YY"}}</span>
+                                <span class="badge badge-pill badge-success">Open Date: {{dateFormat openDate "MMM-DD-YY"}}</span>
+                                <span class="badge badge-pill badge-danger">Close Date: {{dateFormat closeDate "MMM-DD-YY"}}</span>
+                            </div>
+                            <hr>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
+
+        </div>
+        <div style="padding-bottom: 20px">
+            <ul class="pagination justify-content-center">
+                {{#paginate pagination type="previous"}}
+                <li class="page-item {{#if firstPage}}disabled{{/if}}">
+                    <a class="page-link" href="?{{../urlString}}page={{n}}">Prev</a>
+                </li>
+                {{/paginate}} 
+                {{#paginate pagination type="middle" limit="5"}}
+                <li class="page-item {{#if active}}active{{/if}}">
+                    <a class="page-link" href="?{{../urlString}}page={{n}}">{{n}}</a>
+                </li>
+                {{/paginate}} 
+                {{#paginate pagination type="next"}}
+                <li class="page-item {{#if lastPage}}disabled{{/if}}">
+                    <a class="page-link" href="?{{../urlString}}page={{n}}">Next</a>
+                </li>
+                {{/paginate}}
+            </ul>
+        </div>
+    </div>
+
+</section>
+
+<script src="/js/build/topics-filtering.js"></script>

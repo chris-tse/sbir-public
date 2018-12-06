@@ -1,0 +1,57 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/css/login-style.css">
+    <link rel="stylesheet" href="/css/stickyfooter.css">
+{{/section}}
+
+<main class="card mx-auto">
+    <div class="container">
+        {{!-- <div id="loginFail" class="alert alert-warning" style="display: none">
+            <strong>Login failed!</strong> Invalid credentials!
+        </div>
+        <div id="loginSuccess" class="alert alert-success" style="display: none">
+            <strong>Login Success!</strong> Redirecting...
+        </div> --}}
+        <!-- code for forms from https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_form_input&stacked=h -->
+        <div class="row form-signin text-center justify-content-center">
+            <div class="col">
+                <h1>SBIR Connector Login</h1>
+                {{# if loginerrors}}
+                    <div class="errorbox alert alert-danger">
+                        <ul>
+                            {{# each loginerrors}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                {{/if}}
+                <form action="/login" method="POST">
+                    <div class="form-group">
+                        <label class="text-center" for="usr">Username</label>
+                        <input type="text" class="form-control" id="usr" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label class="text-center" for="pwd">Password</label>
+                        <input type="password" class="form-control" id="pwd" name="password">
+                    </div>
+                    
+                    <button type="submit" id="submitbtn" class="btn btn-primary">Sign in</button>
+                </form>
+                <p>New to SBIR Connector? <a href="/register">Create an account</a>.</p>
+                <p><a href="/forgotpassword">Forgot password</a></p>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+    {{!-- {{> footer}}
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery/jquery-migrate.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/lib/easing/easing.min.js"></script> 
+    <script src="/lib/cookies/cookies.min.js"></script>
+    <script src="/js/login.js"></script>
+</body>
+
+</html> --}}

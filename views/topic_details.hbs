@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-8" style="background: #eff5f5">
+        <div class="row">
+            <div class="col-md-12 title">
+                <h1>{{topicTitle}}</h1>
+                <hr>
+                <div class="row">
+                    <aside class="col-md-4">
+                        <ul class="list-group">
+                            <li class="list-group-item"><strong>Agency: <br></strong>{{agency}}</li>
+                            {{#if branch}}
+                                <li class="list-group-item"><strong>Branch: <br></strong> {{branch}}</li>
+                            {{/if}}
+                            <li class="list-group-item"><strong>Program:<br></strong> {{program}}</li>
+                            <li class="list-group-item"><strong>Topic Number: <br></strong>{{topicNumber}}</li>
+                            <li class="list-group-item"><a href="{{solicitationLink}}"><strong>Official Solicitation Link</strong></a></li>
+                            <li class="list-group-item"><strong>Point of Contact:<br> </strong>{{point_of_contact}}</li>
+                            <li class="list-group-item list-group-item-primary"><strong>Release Date:</strong><br> {{dateFormat releaseDate "MMMM DD, YYYY"}}</li>
+                            <li class="list-group-item list-group-item-success"><strong>Open Date: </strong><br>{{dateFormat openDate "MMMM DD, YYYY"}}</li>
+                            <li class="list-group-item list-group-item-danger"><strong>Close Date: </strong><br>{{dateFormat closeDate "MMMM DD, YYYY"}}</li>
+                        </ul>
+                        <br>
+                        <div class="alert alert-success" role="alert">
+                            <h4 class="alert-heading">Notice!</h4>
+                            <p>Topic information is updated after topics are released - make sure to check the original source for the most current information!</p>
+                            <hr>
+                            <p class="mb-0">More information can be found <a href="https://www.sbir.gov/sbirsearch/topic/current">here</a>.</p>
+                        </div>
+                    </aside>
+                    <div class="col-md-8 description">
+                        {{{description}}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card userCard border-dark">
+            <h5 class="card-header ">Interested Users</h5>
+            <div class="card-body">
+                <p>The following people are interested in this topic! Interested in a partnership? Hover over their name to preview their profile and use their contact information to connect.</p>
+                <div class="mx-auto d-flex justify-content-center" role="group" aria-label="Basic example">
+                    {{#if isListed}}
+                        <button type="button" class="btn btn-primary action-btn listed" id="listBtn" data-toggle="tooltip" title="Unlist yourself from this topic"
+                            onclick="listUserOnTopic()">Unlist me</button>
+                    {{else}}
+                        <button type="button" class="btn btn-outline-primary action-btn" id="listBtn" data-toggle="tooltip" title="Be listed for other users to find you!"
+                            onclick="listUserOnTopic()">List me!</button>
+                    {{/if}}
+                    {{#if isSaved}}
+                        <button type="button" class="btn btn-secondary action-btn saved " id="saveBtn" data-toggle="tooltip" title="Remove this topic from your list of favorites"
+                            onclick="saveTopicToUser()">Remove</button>
+                    {{else}}
+                        <button type="button" class="btn btn-outline-secondary action-btn" id="saveBtn" data-toggle="tooltip" title="Add this topic to your list of favorites!"
+                            onclick="saveTopicToUser()">Bookmark</button>
+                    {{/if}}
+                </div>
+                <hr>
+                <ul class="list-group user-list">
+                {{#if users.length}}
+                    {{#each users}}
+                        <li class="list-group-item listed-user">
+                            <a href="/profile/{{this.username}}">
+                                <div class="user">
+                                    <span class="name">{{this.name}}</span>
+                                    <br>
+                                    <span class="title">
+                                        {{#if this.title}}
+                                            {{this.title}}{{#if this.affiliation}} at {{this.affiliation}}{{/if}}
+                                        {{else}}
+                                            {{#if this.affiliation}}{{this.affiliation}}{{/if}}
+                                        {{/if}}</span>
+                                </div>
+                                <div class="view-profile">View Profile</div>
+                            </a>
+                        </li>
+                    {{/each}}
+                {{else}}
+                    <p>No users listed</p>
+                {{/if}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
+<script src="/js/build/topicSaveAndList.js"></script>

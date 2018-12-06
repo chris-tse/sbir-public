@@ -1,0 +1,30 @@
+<header id="header">
+    <div class="container">
+
+        <div id="logo" class="pull-left">
+            <h1><a href="/" class="scrollto">SBIR_Connector</a></h1>
+        </div>
+        
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li class="menu-active"><a href="#intro">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+                <li><a href="/topics/1">Topics</a></li>
+                <li class="menu-has-children"><a href="">Resources</a>
+                    <ul>
+                        <li><a href="#">Drop Down 1</a></li>
+
+                    </ul>
+                </li>
+                <li><a id="loginButton" href="/login">Login/Register</a></li>
+            </ul>
+        </nav>
+        <!-- #nav-menu-container -->
+    </div>
+    <script>
+        if(localStorage.getItem('name')){
+            document.getElementById('loginButton').innerText = 'My Account';
+        }
+    </script>
+</header>

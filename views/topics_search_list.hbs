@@ -1,0 +1,89 @@
+{{#section 'head'}}
+    <link rel="stylesheet" href="/css/topic-style.css">
+{{/section}}
+<section class="topics">
+    <div class="container">
+        <h1 style="text-align: center">Open SBIR/STTR Topics</h1>
+        <hr>
+        <div class="row">
+            <aside class="col-md-3 filtering">
+                <h2 class="text-center">Filtering</h2>
+                <div class="list-group">
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAgency" aria-expanded="false" aria-controls="collapseAgency">
+                        Agency</button>
+                    <div class="collapse" id="collapseAgency">
+                        <div class="card">
+                            {{# each agencies}}
+                                <a href="/topics?agency={{this}}" class="list-group-item list-group-item-action">{{this}}</a>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <br/>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseYear" aria-expanded="false" aria-controls="collapseYear">
+                        Program Type</button>
+                    <div class="collapse" id="collapseYear">
+                        <div class="card">
+                            <a href="/topics?program=SBIR" class="list-group-item list-group-item-action">SBIR</a>
+                            <a href="/topics?program=STTR" class="list-group-item list-group-item-action">STTR</a>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Notice!</h4>
+                    <p>Topic information is updated nightly - make sure to check the original source for the most current information!</p>
+                    <hr>
+                    <p class="mb-0">More information can be found <a href="/#faq">here</a>.</p>
+                </div>
+            </aside>
+            <div class="col-md-9">
+                <form action="/topics/search" method="POST">
+                    <div class="search-bar input-group mb-3">
+                        <input type="text" class="form-control" value="{{search}}" name="keywords" placeholder="Search keywords" aria-label="Keyword search bar">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </div>
+                    </div>
+                </form>
+                <ul class="list-unstyled">
+                    {{# if noResults}}
+                        <p>Sorry, no results were found for '{{keyword}}'</p>
+                    {{else}}
+                        {{#each topics}}
+                            <li>
+                                <div class="topic-overview"><a href="/details?title={{title}}&agency={{agency}}">{{title}}</a>
+                                    <br><span class="badge badge-secondary">{{program}}</span> <span class="badge badge-secondary">{{agency}}</span>
+                                    <p>{{overview}}</p>
+                                    <span class="badge badge-pill badge-primary">Release Date: {{release_date}}</span>
+                                    <span class="badge badge-pill badge-success">Open Date: {{open_date}}</span>
+                                    <span class="badge badge-pill badge-danger">Close Date: {{close_date}}</span>
+                                </div>
+                                <hr>
+                            </li>
+                        {{/each}}
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+        <div style="padding-bottom: 20px">
+            <ul class="pagination justify-content-center">
+                {{#paginate pagination type="previous"}}
+                <li class="page-item {{#if firstPage}}disabled{{/if}}">
+                    <a class="page-link" href="?keywords={{../searchQuery}}&page={{n}}">Prev</a>
+                </li>
+                {{/paginate}} 
+                {{#paginate pagination type="middle" limit="5"}}
+                <li class="page-item {{#if active}}active{{/if}}">
+                    <a class="page-link" href="?keywords={{../searchQuery}}&page={{n}}">{{n}}</a>
+                </li>
+                {{/paginate}} 
+                {{#paginate pagination type="next"}}
+                <li class="page-item {{#if lastPage}}disabled{{/if}}">
+                    <a class="page-link" href="?keywords={{../searchQuery}}&page={{n}}">Next</a>
+                </li>
+                {{/paginate}}
+            </ul>
+        </div>
+    </div>
+
+</section>

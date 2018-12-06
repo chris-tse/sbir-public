@@ -1,0 +1,45 @@
+body {
+	padding-top: 70px;
+	/* background: linear-gradient(45deg, #0091ee, #0072bb); */
+	background: #0072bb;
+}
+
+main.card {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	max-width: 700px;
+	padding: 10px 30px;
+}
+
+.form-signin h1 {
+	margin: 10px 0 30px 0;
+	padding: 0 15px;
+}
+
+.form-signin form {
+	margin-bottom: 50px;
+}
+
+.errorbox ul {
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	list-style: none;
+}
+
+form input {
+	text-align: center;
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #999;
+    opacity: 0.5; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #999;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+    color: #999;
+}

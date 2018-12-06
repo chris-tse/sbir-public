@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <link href="/css/topic-style.css" rel="stylesheet">
+    <link href="/css/topic-details.css" rel="stylesheet">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    {{!-- <script src="/lib/jquery/jquery-migrate.min.js"></script> --}}
+    {{!-- <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
+    <script src="/js/popper.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    {{> head}}
+    <title>{{title}}</title>
+</head>
+
+<body>
+{{> nav}}
+<!-- End of header-->
+<section class="background" style="padding-top: 70px">
+    <div class="container-fluid">
+        {{{body}}}
+    </div>
+</section>
+{{> footer}}
+<script src="/js/external.js"></script>
+</body>
+</html>

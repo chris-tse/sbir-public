@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand scrollto" href="/"><img src="/img/whitelogo.png" alt="SBIR Connector Logo" style="height: 35px; vertical-align: baseline"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/#intro">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#about">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/#faq">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link external" href="https://okcatalyst.com">Catalyst Programs</a>
+                </li>
+                
+                {{!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Resources
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item external" href="https://sbir.gov">SBIR.gov</a>
+                        <a class="dropdown-item external" href="https://www.sba.gov/business-guide">Small Busines Administration</a>
+                        <a class="dropdown-item external" href="https://www.acq.osd.mil/osbp/sbir/">Department of Defense</a>
+                        <a class="dropdown-item external" href="https://www.nih.gov/">National Institutes of Health</a>
+                        <a class="dropdown-item external" href="https://okcatalysts.com/">OK Catalyst Programs</a>
+                    </div>
+                </li> --}}
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/topics">Topics</a>
+                </li>
+                {{#if isAuthenticated}}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-haspopup="true">Hello {{firstName user.name}}</a>
+                        <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item" href="/logout">Log Out</a>
+                        </div>
+                    </li>
+                {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login/Register</a>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
